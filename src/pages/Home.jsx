@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const logoUrl = "/images/crispr-logo.svg";
+
 const courses = [
-  { id: 1, title: "React for Beginners", author: "A. Sharma", price: "₹499", rating: 4.7 },
-  { id: 2, title: "Fullstack MERN Bootcamp", author: "R. Patel", price: "₹999", rating: 4.8 },
-  { id: 3, title: "Advanced JavaScript", author: "S. Rao", price: "₹399", rating: 4.6 },
-  { id: 4, title: "UI/UX Design Essentials", author: "M. Singh", price: "₹299", rating: 4.5 },
+  { id: 1, title: "React for Beginners", author: "A. Sharma", rating: 4.7 },
+  { id: 2, title: "Fullstack MERN Bootcamp", author: "R. Patel", rating: 4.8 },
+  { id: 3, title: "Advanced JavaScript", author: "S. Rao", rating: 4.6 },
+  { id: 4, title: "UI/UX Design Essentials", author: "M. Singh", rating: 4.5 },
 ];
 
 export default function Home() {
@@ -15,7 +17,11 @@ export default function Home() {
       <header className="bg-black/95 border-b border-gray-900">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link to="/" className="text-2xl font-extrabold text-brand-400 select-none">Udemy Clone</Link>
+            <Link to="/" className="flex items-center gap-3 select-none">
+              <img src={logoUrl} alt="Crispr logo" className="h-8 w-auto object-contain" />
+              {/* <span className="text-2xl font-extrabold text-brand-400">Crispr</span> */}
+            </Link>
+
             <nav className="hidden md:flex gap-6 text-sm text-gray-300">
               <Link to="/" className="hover:text-brand-400">Home</Link>
               <Link to="/courses" className="hover:text-brand-400">Courses</Link>
@@ -101,7 +107,6 @@ export default function Home() {
                 <h3 className="font-semibold text-gray-100">{c.title}</h3>
                 <div className="text-sm text-gray-400">{c.author}</div>
                 <div className="mt-3 flex items-center justify-between">
-                  <div className="text-brand-400 font-bold">{c.price}</div>
                   <div className="text-sm text-gray-300">{c.rating} ★</div>
                 </div>
               </article>
@@ -112,11 +117,11 @@ export default function Home() {
         {/* Instructor CTA */}
         <section className="mt-12 bg-gradient-to-r from-brand-800 to-brand-700 text-white rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <h3 className="text-xl font-bold">Add to Udemy Clone</h3>
-            <p className="mt-2 text-sm text-gray-100 max-w-lg">Create a course, share your knowledge, and earn while helping learners grow.</p>
+            <h3 className="text-xl font-bold">Contribute to Crispr</h3>
+            <p className="mt-2 text-sm text-gray-100 max-w-lg">Create a course, share your knowledge, and help others learn.</p>
           </div>
           <div className="flex gap-3">
-            <button className="bg-black/90 text-brand-400 px-4 py-2 rounded font-medium hover:brightness-95">Start teaching</button>
+            <button className="bg-black/90 text-brand-400 px-4 py-2 rounded font-medium hover:brightness-95">Contribute</button>
             <Link to="/become-instructor" className="px-4 py-2 border border-gray-300 rounded text-gray-100">Learn more</Link>
           </div>
         </section>
@@ -125,7 +130,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black/95 border-t border-gray-900">
         <div className="max-w-7xl mx-auto px-6 py-6 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-3">
-          <div>© {new Date().getFullYear()} Udemy Clone</div>
+          <div>© {new Date().getFullYear()} Crispr</div>
           <div className="flex gap-4">
             <Link to="/terms" className="text-gray-400 hover:text-brand-400">Terms</Link>
             <Link to="/privacy" className="text-gray-400 hover:text-brand-400">Privacy</Link>
